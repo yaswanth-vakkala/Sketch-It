@@ -30,3 +30,15 @@ h1{
 .btn{
     padding: 7px 20px;
 }
+
+.draw-area{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.draw-area div{
+    background-color: lightblue;
+    flex: 1 1 auto;
+    height: 32px;
+    width: 32px;
+}
