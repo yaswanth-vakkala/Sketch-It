@@ -1,6 +1,6 @@
 const drawArea = document.querySelector(".draw-area");
 
-function generateArea(squares = 16) {
+function generateArea(squares=16) {
   for (let i = 0; i < squares * squares; i++) {
     const division = document.createElement("div");
     division.style.height = 512 / squares + "px";
@@ -27,8 +27,16 @@ function addEL(squares = 16) {
 generateArea(16);
 addEL(16);
 
-function handleClick() {
-  const input = prompt("Enter no of squares for the grid: ");
+let input;
+
+function handleInput() {
+  input = prompt("Enter no of squares for the grid: ");
+  drawArea.replaceChildren();
+  generateArea(input);
+  addEL(input);
+}
+
+function handleClear() {
   drawArea.replaceChildren();
   generateArea(input);
   addEL(input);

@@ -52,3 +52,7 @@ h1{
     background-color: #000000;
     /* display:block; */
 /* }  */
+
+.btn{
+    cursor: pointer;
+}
