@@ -10,6 +10,19 @@ function generateArea(squares = 16) {
   //   addEL(squares);
 }
 
+function addElBtn() {
+  const buttons = document.querySelectorAll(".btn");
+  buttons[1].classList.add("btn-style");
+  for (let k = 0; k < 3; k++) {
+    buttons[k].addEventListener("click", function (e) {
+      buttons.forEach((btn) => {
+        btn.classList.remove("btn-style");
+      });
+      e.target.classList.add("btn-style");
+    });
+  }
+}
+
 let flag = 0;
 
 function addEL(squares = 16) {
@@ -29,6 +42,7 @@ function addEL(squares = 16) {
 
 generateArea(16);
 addEL(16);
+addElBtn();
 
 let input;
 
@@ -43,6 +57,7 @@ function handleClear() {
   drawArea.replaceChildren();
   generateArea(input);
   addEL(input);
+  addElBtn();
 }
 
 function handleEraser() {

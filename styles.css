@@ -1,51 +1,51 @@
-*{
-    background-color: #f1f1f1;
+* {
+  background-color: #f1f1f1;
 }
 
-h1{
-    text-align: center;
-    font-family: cursive, sans-serif;
+h1 {
+  text-align: center;
+  font-family: cursive, sans-serif;
 }
 
-.layout{
-    display: flex;
-    justify-content: space-around;
-    width: 1000px;
-    margin: auto;
-    padding: 50px;
+.layout {
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+  margin: auto;
+  padding: 50px;
 }
 
-.draw-area{
-    background-color: #ffffff;
-    height: 512px;
-    width: 512px;
+.draw-area {
+  background-color: #ffffff;
+  height: 512px;
+  width: 512px;
 }
 
-.menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.btn{
-    padding: 7px 20px;
+.btn {
+  padding: 7px 20px;
 }
 
-.draw-area{
-    display: flex;
-    flex-wrap: wrap;
+.draw-area {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.draw-area div{
-    background-color: #ffffff;
-    flex: 1 1 auto;
-    /* height: 32px;
+.draw-area div {
+  background-color: #ffffff;
+  flex: 1 1 auto;
+  /* height: 32px;
     width: 32px; */
-    /* display: none; */
+  /* display: none; */
 }
 
-.active-state{
-    background-color: #000000;
+.active-state {
+  background-color: #000000;
 }
 
 /* .draw-area:active div:hover{
@@ -53,6 +53,17 @@ h1{
     /* display:block; */
 /* }  */
 
-.btn{
-    cursor: pointer;
+.btn {
+  cursor: pointer;
+  transition: transform .2s;
+  border-radius: 5px;
+}
+
+.btn-style {
+  background-color: #000000;
+  color: #f1f1f1;
+}
+
+.btn:hover{
+    transform: scale(1.1);
 }
