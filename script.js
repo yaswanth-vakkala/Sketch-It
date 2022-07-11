@@ -1,6 +1,6 @@
 const drawArea = document.querySelector(".draw-area");
 
-function generateArea(squares=16) {
+function generateArea(squares = 16) {
   for (let i = 0; i < squares * squares; i++) {
     const division = document.createElement("div");
     division.style.height = 512 / squares + "px";
@@ -17,8 +17,11 @@ function addEL(squares = 16) {
   const drawAreaElements = document.querySelectorAll(".draw-area div");
   for (let i = 0; i < squares * squares; i++) {
     drawAreaElements[i].addEventListener("mouseover", function () {
-      this.style.backgroundColor = "#000000";
-      //   flat = 1;
+      if (flag === 0) {
+        this.style.backgroundColor = "#000000";
+      } else {
+        this.style.backgroundColor = "#ffffff";
+      }
     });
   }
   //   console.log(flag);
@@ -40,6 +43,10 @@ function handleClear() {
   drawArea.replaceChildren();
   generateArea(input);
   addEL(input);
+}
+
+function handleEraser() {
+  flag = 1;
 }
 
 // function addEL2() {
