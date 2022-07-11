@@ -49,6 +49,10 @@ function handleEraser() {
   flag = 1;
 }
 
+function handlePen() {
+  flag = 0;
+}
+
 // function addEL2() {
 //     // addEventListener("onmousedown", mDown(this));
 //     const drawAreaElements = document.querySelectorAll(".draw-area div");
