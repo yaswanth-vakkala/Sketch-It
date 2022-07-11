@@ -24,18 +24,43 @@ function addElBtn() {
 }
 
 let flag = 0;
+let clicked = 0;
+
+// document.body.ondragover = function (e) {
+//   e.preventDefault();
+// };
+
+// document.body.onmousedown = function () {
+//   ++clicked;
+// };
+// document.body.onmousemove = function () {
+//   if (clicked == 1) {
+//     clicked = 1;
+//   }
+// };
+// document.body.onmouseup = function () {
+//   --clicked;
+// };
 
 function addEL(squares = 16) {
   // addEventListener("onmousedown", mDown(this));
   const drawAreaElements = document.querySelectorAll(".draw-area div");
   for (let i = 0; i < squares * squares; i++) {
     drawAreaElements[i].addEventListener("mouseover", function () {
+      // if (clicked == 1) {
       if (flag === 0) {
         this.style.backgroundColor = "#000000";
       } else {
         this.style.backgroundColor = "#ffffff";
       }
+      // }
     });
+    // drawAreaElements[i].addEventListener("mousedown", function () {
+    //   clicked = 1;
+    // });
+    // drawAreaElements[i].addEventListener("mouseup", function () {
+    //   clicked = 0;
+    // });
   }
   //   console.log(flag);
 }
@@ -57,7 +82,7 @@ function handleClear() {
   drawArea.replaceChildren();
   generateArea(input);
   addEL(input);
-  addElBtn();
+  // addElBtn();
 }
 
 function handleEraser() {
