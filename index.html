@@ -12,10 +12,14 @@
     <h1>Sketch It</h1>
     <div class="layout">
       <div class="menu">
-        <button class="btn" onclick="handleInput()">Custom Input</button>
+        <!-- <button class="btn" onclick="handleInput()">Custom Input</button> -->
         <button class="btn" onclick="handlePen()">Pen</button>
         <button class="btn" onclick="handleEraser()">Eraser</button>
         <button class="btn" onclick="handleClear()">Clear</button>
+        <div class="slidecontainer">
+          <input type="range" min="4" max="100" value="16" class="slider" id="myRange">
+          <p id="slider-output">16 x 16</p>
+        </div>
       </div>
       <div class="draw-area"></div>
     </div>

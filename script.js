@@ -12,8 +12,8 @@ function generateArea(squares = 16) {
 
 function addElBtn() {
   const buttons = document.querySelectorAll(".btn");
-  buttons[1].classList.add("btn-style");
-  for (let k = 0; k < 3; k++) {
+  buttons[0].classList.add("btn-style");
+  for (let k = 0; k < 2; k++) {
     buttons[k].addEventListener("click", function (e) {
       buttons.forEach((btn) => {
         btn.classList.remove("btn-style");
@@ -71,12 +71,12 @@ addElBtn();
 
 let input;
 
-function handleInput() {
-  input = prompt("Enter no of squares for the grid: ");
-  drawArea.replaceChildren();
-  generateArea(input);
-  addEL(input);
-}
+// function handleInput() {
+//   input = prompt("Enter no of squares for the grid: ");
+//   drawArea.replaceChildren();
+//   generateArea(input);
+//   addEL(input);
+// }
 
 function handleClear() {
   drawArea.replaceChildren();
@@ -111,3 +111,17 @@ function handlePen() {
 //   // obj.classList.add("active-state");
 //   console.log(obj);
 // }
+
+
+let slider = document.getElementById("myRange");
+let output = document.getElementById("slider-output");
+output.innerHTML = slider.value + " x " + slider.value;
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value + " x " + this.value;
+  drawArea.replaceChildren();
+  generateArea(this.value);
+  addEL(this.value);
+
+}

@@ -67,3 +67,7 @@ h1 {
 .btn:hover{
     transform: scale(1.1);
 }
+
+.slider p{
+  text-align: center;
+}
