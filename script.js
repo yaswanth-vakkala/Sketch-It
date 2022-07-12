@@ -43,16 +43,36 @@ let clicked = 0;
 // };
 
 let color = "#000000";
+let mflag = 0;
+let eflag = 0;
+
+window.addEventListener("mousedown", function () {
+  mflag = 1;
+  eflag = 1;
+});
+
+window.addEventListener("mouseup", function () {
+  mflag = 0;
+  eflag = 0;
+});
 
 function addEL(squares = 16) {
   // addEventListener("onmousedown", mDown(this));
   const drawAreaElements = document.querySelectorAll(".draw-area div");
   for (let i = 0; i < squares * squares; i++) {
+    // drawAreaElements[i].addEventListener("mousedown", function () {
+    //   mflag = 1;
+    // });
+
+    // drawAreaElements[i].addEventListener("mouseup", function () {
+    //   mflag = 0;
+    // });
     drawAreaElements[i].addEventListener("mouseover", function () {
       // if (clicked == 1) {
-      if (flag === 0) {
+
+      if (flag === 0 && mflag === 1) {
         this.style.backgroundColor = color;
-      } else {
+      } else if (flag === 1 && eflag === 1 && mflag == 0) {
         this.style.backgroundColor = "#ffffff";
       }
       // }
@@ -88,11 +108,14 @@ function handleClear() {
 }
 
 function handleEraser() {
+  eflag = 1;
   flag = 1;
+  mflag = 0;
 }
 
 function handlePen() {
   flag = 0;
+  eflag = 0;
 }
 
 // function addEL2() {
