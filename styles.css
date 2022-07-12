@@ -106,3 +106,13 @@ h1 {
   text-align: center;
   margin-top: 12px;
 }
+
+#inputcolor{
+  border: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.color-container{
+  text-align: center;
+}

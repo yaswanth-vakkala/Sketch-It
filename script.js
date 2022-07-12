@@ -42,6 +42,8 @@ let clicked = 0;
 //   --clicked;
 // };
 
+let color = "#000000";
+
 function addEL(squares = 16) {
   // addEventListener("onmousedown", mDown(this));
   const drawAreaElements = document.querySelectorAll(".draw-area div");
@@ -49,7 +51,7 @@ function addEL(squares = 16) {
     drawAreaElements[i].addEventListener("mouseover", function () {
       // if (clicked == 1) {
       if (flag === 0) {
-        this.style.backgroundColor = "#000000";
+        this.style.backgroundColor = color;
       } else {
         this.style.backgroundColor = "#ffffff";
       }
@@ -112,16 +114,19 @@ function handlePen() {
 //   console.log(obj);
 // }
 
-
 let slider = document.getElementById("myRange");
 let output = document.getElementById("slider-output");
 output.innerHTML = slider.value + " x " + slider.value;
 
 // Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
+slider.oninput = function () {
   output.innerHTML = this.value + " x " + this.value;
   drawArea.replaceChildren();
   generateArea(this.value);
   addEL(this.value);
+};
 
-}
+const picker = document.getElementById("inputcolor");
+picker.oninput = function () {
+  color = this.value;
+};

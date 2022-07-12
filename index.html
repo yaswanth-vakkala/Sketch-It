@@ -6,13 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" href="./icon/sketching.png">
+    <link rel="icon" href="./icon/sketching.png" />
     <title>Sketch-It</title>
   </head>
   <body>
     <h1>Sketch It</h1>
     <div class="layout">
       <div class="menu">
+        <div class="color-container">
+          <input
+            type="color"
+            id="inputcolor"
+            name="inputcolor"
+            value="#000000"
+          />
+        </div>
         <!-- <button class="btn" onclick="handleInput()">Custom Input</button> -->
         <button class="btn" onclick="handlePen()">Pen</button>
         <button class="btn" onclick="handleEraser()">Eraser</button>
