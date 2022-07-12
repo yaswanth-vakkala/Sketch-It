@@ -5,5 +5,4 @@ javascript, DOM mainpulation and more.
 
 Live Demo Link: https://yaswanth-vakkala.github.io/Sketch-It/
 
-Note: This is the 1st version of Sketch It I made. The project still requires a lot of cleaning up and modification to do. I will revisit
-	this project at a later date.
+Note: Still have to refactor the code a lot.
