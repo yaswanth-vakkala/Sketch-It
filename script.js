@@ -23,19 +23,15 @@ function addElBtn() {
 }
 
 let flag = 0;
-let clicked = 0;
 let color = "#000000";
 let mflag = 0;
-let eflag = 0;
 
 window.addEventListener("mousedown", function () {
   mflag = 1;
-  eflag = 1;
 });
 
 window.addEventListener("mouseup", function () {
   mflag = 0;
-  eflag = 0;
 });
 
 function addEL(squares = 16) {
@@ -44,7 +40,7 @@ function addEL(squares = 16) {
     drawAreaElements[i].addEventListener("mouseover", function () {
       if (flag === 0 && mflag === 1) {
         this.style.backgroundColor = color;
-      } else if (flag === 1 && eflag === 1 && mflag == 0) {
+      } else if (flag === 1 && mflag === 1) {
         this.style.backgroundColor = "#ffffff";
       }
     });
@@ -55,23 +51,19 @@ generateArea(16);
 addEL(16);
 addElBtn();
 
-let input;
-
 function handleClear() {
   drawArea.replaceChildren();
-  generateArea(input);
-  addEL(input);
+  generateArea();
+  addEL();
 }
 
 function handleEraser() {
-  eflag = 1;
   flag = 1;
   mflag = 0;
 }
 
 function handlePen() {
   flag = 0;
-  eflag = 0;
 }
 
 let slider = document.getElementById("myRange");
