@@ -53,8 +53,9 @@ addElBtn();
 
 function handleClear() {
   drawArea.replaceChildren();
-  generateArea();
-  addEL();
+  generateArea(slider.value);
+  addEL(slider.value);
+  console.log("i clicked");
 }
 
 function handleEraser() {
